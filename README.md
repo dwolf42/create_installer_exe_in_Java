@@ -179,8 +179,8 @@ JAR command not recognized in CMD: \
 
 * Go to the _Advanced _tab (top side) and click _Environment Variables…_
 * In the lower part of the upcoming window, you find the _System variables_, look for the entry named _Path _(take care, there is another entry with a similar name), _single click_ it and click _Edit…_
-* There should be a variable called _C:\Program Files\Java_ or similar. Mine contained something with _Oracle _in it. Select it and click _Browse…_
-* Now, navigate to _C:\Program Files\Java\_ - select the _Bin_ folder - hit 4 times _OK_, once_ _in each window.
+* There should be a variable called _C:\Program Files\Java\_ or similar. Mine contained something with _Oracle _in it. Select it and click _Browse…_
+* Now, navigate to _C:\Program Files\Java\FOLDER_OF_YOUR_JDK_ - select the _Bin_ folder - hit 4 times _OK_, once_ _in each window.
 * In case your CMD is open, close and re-open it. You now can type _jar _into CMD, and if it displays something like _Usage: jar [OPTION…]_ etc. you’re fine now.
 
 Antivirus suspects the installer as malware: \

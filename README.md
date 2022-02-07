@@ -1,5 +1,3 @@
-
-
 # Creating an EXE file for Windows with jpackage
 
 As being a beginner in Java myself, I always wanted to have my console program to be standalone run-able on my and the Windows computers of my friends by a single double click. There are a lot of tools and even more, sometimes good, sometimes bad tutorials on how to use these tools. Some developers even charge theirs software, which is totally fine, but they had apparently not even thought about writing a guide about how to actually use this software.
@@ -25,89 +23,95 @@ Oh, and it's also relatively easy to use once you've seen how it works.
 Now without further ado, let’s jump right into the tutorial!  
   
 
-**Prerequisites:**
+## **Prerequisites:**
 
--   Create: A new empty folder on your desktop, you can name it as your software. For the sake of simplicity, I use the Main as name for my project, and I will write most commands to work with Main as project and folder names.  
-    If you want to have another name, please change Main into whatever your project’s name is.
+**Create:**
+ A new empty folder on your desktop, you can name it as your software. For the sake of simplicity, I use `Main` as name for my project, and I will write most commands to work with Main as project and folder names.  
+If you want to have another name, please change Main into whatever your project’s name is.
     
--   Things to put inside that folder:  
-    The JAVA file of your project (Main.java).  
-    An ICO file, which you want to have as icon for your application.  
-    Note: ICO max file size is 150 x 150 pixels.  
-    Convert your image to ICO on [https://convertio.co/](https://convertio.co/)
+ ~ Things to put inside that folder:
+ 
     
--   >Another ICO file, which you want to have as icon for the installer of your program.
+- [ ] The `JAVA` file of your project (`Main.java`).  
+- [ ] An `ICO` file, which you want to have as icon for your application.  
+- [ ] *Note:* `ICO` max file size is 150 x 150 pixels.  
+- [ ] Convert your image to `ICO` on [https://convertio.co/](https://convertio.co/)
+- [ ] Another `ICO` file, which you want to have as icon for the installer of your program.
+
     
--   Install: Wix Toolset [https://wixtoolset.org/releases/](https://wixtoolset.org/releases/) - jpackage needs it to be able to create your Windows Installer.
+**Install:** 
+- [ ] Wix Toolset [https://wixtoolset.org/releases/](https://wixtoolset.org/releases/) - jpackage needs it to be able to create your Windows Installer.
     
--   Install: 7-Zip [https://7-zip.org/](https://7-zip.org/) - we need this to specify the main class inside the JAR file we are going to create.
+- [ ] 7-Zip [https://7-zip.org/](https://7-zip.org/) - we need this to specify the main class inside the JAR file we are going to create.
     
--   Install: Resource Hacker [http://www.angusj.com/resourcehacker/](http://www.angusj.com/resourcehacker/) - used to change the icon of the installer.
+- [ ] Resource Hacker [http://www.angusj.com/resourcehacker/](http://www.angusj.com/resourcehacker/) - used to change the icon of the installer.
     
--   At this point, I assume you already have installed the JDK (Java Development Kit), as well as the JRE (Java Runtime Environment).  
-    In case there is one of them missing, you can get both here:  
-    JDK: [https://www.oracle.com/java/technologies/downloads/  
-    ](https://www.oracle.com/java/technologies/downloads/)JRE: [https://java.com/en/download/](https://java.com/en/download/)  
+
+At this point, I assume you already have installed the JDK (Java Development Kit), as well as the JRE (Java Runtime Environment).  
+In case there is one of them missing, you can get both here:  
+
+- [ ] JDK: [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
+- [ ] JRE: [https://java.com/en/download/](https://java.com/en/download/)  
       
-    
 
-1.  Compiling the CLASS file  
-      
-    
-
+## 1# Compiling the CLASS file:
+   
 -   Open Windows start menu, type CMD and run it.
     
--   The standard directory you are currently in is usually C:\Users\YOUR_USERNAME (on Win10 at least).
+-   The standard directory you are currently in is usually `C:\Users\YOUR_USERNAME` (on Win10 at least).
     
--   Navigate to your project’s folder, type cd \Desktop\Main into the CMD and hit enter.
+-   Navigate to your project’s folder, type `cd \Desktop\Main` into the CMD and hit `enter`.
     
--   In order to compile your project to bytecode, type javac Main.java and, again, hit enter.
+-   In order to compile your project to bytecode, type `javac Main.java` and, again, hit `enter`.
     
--   Now we have the Main.class in our folder at the desktop. You can check this by typing dir into CMD, followed by enter. This lists all files inside that folder.  
+-   Now we have the `Main.class` in our folder at the desktop. You can check this by typing `dir` into CMD, followed by enter. This lists all files inside that folder.  
       
     
 
-2.  Creating a JAR file  
+## 2# Creating a JAR file  
       
     
 
--   To create the JAR file that contains a manifest file, type jar cf Main.jar Main.class into CMD, and push the enter key.  
+-   To create the `JAR` file that contains a manifest file, type `jar cf Main.jar Main.class` into CMD, and push the `enter` key.  
       
     >What this command does:  
-    jar tells CMD to use the jar program coming with JDK.  
-    c option indicates that you want to create a JAR file.  
-    f option indicates that you want the output to be a file.  
-    Main.jar is the name that your JAR will have after creation. You can name it anything, as long as it ends with .jar (basically you could even use another ending than jar, but that’s no good practice).  
-    Main.class specifies the file you want to put into your JAR.  
-    For more info about these and other commands, have a look at: [https://docs.oracle.com/javase/tutorial/deployment/jar/build.html](https://docs.oracle.com/javase/tutorial/deployment/jar/build.html)  
+    *`jar` tells CMD to use the jar program coming with JDK.  
+    `c` option indicates that you want to create a `JAR` file.  
+    `f` option indicates that you want the output to be a file.  
+    `Main.jar` is the name that your `JAR` will have after creation. You can name it anything, as long as it ends with `.jar` (basically you could even use another ending than `jar`, but that’s no good practice).  
+    `Main.class` specifies the file you want to put into your JAR.  
+    For more info about these and other commands, have a look at:* [https://docs.oracle.com/javase/tutorial/deployment/jar/build.html](https://docs.oracle.com/javase/tutorial/deployment/jar/build.html)  
       
     
 
-3.  Specify the main class
+## 3# Specify the main class
     
 
 Ok, this part is a little tricky, so make sure you read it carefully, before following the steps.
 
--   Go to your project’s folder, right-click the Main.jar - click 7-Zip - open
+-   Go to your project’s folder, `right-click` the `Main.jar` - click `7-Zip` - `open`
     
--   Open the META–INF folder  - open MANIFEST.MF  
+-   `Open` the META–INF folder  - `open` MANIFEST.MF  
       
     >The file contains text, similar to this:  
     Manifest-Version: 1.0  
-    Created-By: 17.0.1 (Oracle Corporation)
+    Created-By: 17.0.1 (Oracle Corporation)  
     
+    <br/>
+⚠️**IMPORTANT⚠️:** 
+*The manifest must end with a new line or carriage return after the text. The last line will not be parsed properly if it does not end with a new line or carriage return.*
 
-Warning: The manifest must end with a new line or carriage return after the text. The last line will not be parsed properly if it does not end with a new line or carriage return.
-
-Add the last line Main-Class: Main  
-After this line there has to be a new line or carriage return!  
+Add as the last line `Main-Class: Main`  
+❗After this line there has to be a new line or carriage return❗  
   
 Manifest-Version: 1.0  
 Created-By: 17.0.1 (Oracle Corporation)  
 Main-Class: Main
-
-Warning: The manifest must end with a new line or carriage return after the text. The last line will not be parsed properly if it does not end with a new line or carriage  
-return.  
+❗this-is-an-empty-new-line❗   
+   
+   
+⚠️**IMPORTANT⚠️:** 
+*The manifest must end with a new line or carriage return after the text. The last line will not be parsed properly if it does not end with a new line or carriage return.*
 
 -   OK then. Now, let’s hit File - Save and close the document. 7-Zip will ask you to update the archive, hit OK once again and close the 7-Zip window.  
       

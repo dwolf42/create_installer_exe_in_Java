@@ -2,7 +2,7 @@
 
 As being a beginner in Java myself, I always wanted to have my console program to be standalone run-able on my and the Windows computers of my friends by a single double click. There are a lot of tools and even more, sometimes good, sometimes bad tutorials on how to use these tools. Some developers even charge theirs software, which is totally fine, but they had apparently not even thought about writing a guide about how to actually use this software.
 
-Which one I exactly used for my last project TicTacToeSuper I can’t clearly remember, but I think it was either WinRun4J or JSmooth. They did what they should and created an EXE file for my game, which I then could share with friends and people out there on the internet.  
+Which one I exactly used for my last project TicTacToeSuper I can’t clearly remember, but I think it was either WinRun4J or JSmooth. They did what they should and created an `EXE` file for my game, which I then could share with friends and people out there on the internet.  
   
 
 But it also had a major downside.  
@@ -10,28 +10,29 @@ The user was required to install Java - and in some cases friends told me that t
   
 It isn’t quite comfortable if someone just wants to play my game.  
   
-For TicTacToeSuperGT I wanted to ship a game that was just running, so everyone, no matter if they have a good understanding about computers or not, will be able to play it. Because of this, I was looking for something to convert my game to an executable and also comes along with every aspect of Java that is required, but doesn’t require Java to be installed.
+For my game [TicTacToeSuperGT](https://github.com/Kabraxis/TicTacToeSuperGT) I wanted to ship a game that was just running, so everyone, no matter if they have a good understanding about computers or not, will be able to play it. Because of this, I was looking for something to convert my game to an executable and also comes along with every aspect of Java that is required, but doesn’t require Java to be installed.
 
-I found most of the tutorials about how to make an EXE file of my Java application, as well as the tutorials for the regarding tools, have been a nightmare for me.  
-So I thought I would just write a tutorial myself. One that is understandable and that everybody can follow easily to have their program as an EXE file at the end.  
+I found most of the tutorials about how to make an `EXE` file of my Java application, as well as the tutorials for the regarding tools, have been a nightmare for me.  
+So I thought I would just write a tutorial myself. One that is understandable and that everybody can follow easily to have their program as an `EXE` file at the end.  
   
-Through the tip of a Reddit user I became aware of jpackage, that comes with JDK and is capable of making an EXE, and brings all the necessary files, so the program will run without having Java necessarily installed.  
+Through the tip of a Reddit user I became aware of `jpackage`, that comes with JDK and is capable of making an `EXE`, and brings all the necessary files, so the program will run without having Java necessarily installed.  
 Two other pretty cool features are the options for the user to decide in which directory my program should be installed, and running the installer after the program was installed will offer the options to either repair or even remove the application.
 
 Oh, and it's also relatively easy to use once you've seen how it works.
 
 Now without further ado, let’s jump right into the tutorial!  
   
+<br/>
 
 ## **Prerequisites:**
 
 **Create:**
- A new empty folder on your desktop, you can name it as your software. For the sake of simplicity, I use `Main` as name for my project, and I will write most commands to work with Main as project and folder names.  
+A new empty folder on your desktop, you can name it as your software. For the sake of simplicity, I use `Main` as name for my project, and I will write most commands to work with Main as project and folder names.  
 If you want to have another name, please change Main into whatever your project’s name is.
     
- ~ Things to put inside that folder:
+What to place in that folder?
  
-    
+     
 - [ ] The `JAVA` file of your project (`Main.java`).  
 - [ ] An `ICO` file, which you want to have as icon for your application.  
 - [ ] *Note:* `ICO` max file size is 150 x 150 pixels.  
@@ -67,6 +68,7 @@ In case there is one of them missing, you can get both here:
 -   Now we have the `Main.class` in our folder at the desktop. You can check this by typing `dir` into CMD, followed by enter. This lists all files inside that folder.  
       
     
+    <br/>
 
 ## 2# Creating a JAR file  
       
@@ -74,7 +76,7 @@ In case there is one of them missing, you can get both here:
 
 -   To create the `JAR` file that contains a manifest file, type `jar cf Main.jar Main.class` into CMD, and push the `enter` key.  
       
-    >What this command does:  
+    >**What this command does:**  
     *`jar` tells CMD to use the jar program coming with JDK.  
     `c` option indicates that you want to create a `JAR` file.  
     `f` option indicates that you want the output to be a file.  
@@ -83,6 +85,7 @@ In case there is one of them missing, you can get both here:
     For more info about these and other commands, have a look at:* [https://docs.oracle.com/javase/tutorial/deployment/jar/build.html](https://docs.oracle.com/javase/tutorial/deployment/jar/build.html)  
       
     
+<br/>
 
 ## 3# Specify the main class
     
@@ -93,77 +96,80 @@ Ok, this part is a little tricky, so make sure you read it carefully, before fol
     
 -   `Open` the META–INF folder  - `open` MANIFEST.MF  
       
-    >The file contains text, similar to this:  
+    >**The file contains text, similar to this:  
     Manifest-Version: 1.0  
-    Created-By: 17.0.1 (Oracle Corporation)  
+    Created-By: 17.0.1 (Oracle Corporation)** 
     
     <br/>
 ⚠️**IMPORTANT⚠️:** 
 *The manifest must end with a new line or carriage return after the text. The last line will not be parsed properly if it does not end with a new line or carriage return.*
 
 Add as the last line `Main-Class: Main`  
-❗After this line there has to be a new line or carriage return❗  
+After this line there has to be a new line or carriage return.  
   
 Manifest-Version: 1.0  
 Created-By: 17.0.1 (Oracle Corporation)  
 Main-Class: Main
-❗this-is-an-empty-new-line❗   
+❗here-has-to-be-an-empty-new-line-so-just-hit-`enter`❗   
    
    
 ⚠️**IMPORTANT⚠️:** 
 *The manifest must end with a new line or carriage return after the text. The last line will not be parsed properly if it does not end with a new line or carriage return.*
-
--   OK then. Now, let’s hit File - Save and close the document. 7-Zip will ask you to update the archive, hit OK once again and close the 7-Zip window.  
+<br/>
+-   OK then, now hit `File` - `Save` and `close` the document. 7-Zip will ask you to update the archive, hit `OK` once again and `close` the 7-Zip window.  
       
     
+<br/>
 
-4.  Let’s create the installer
+## 4# Let’s create the installer
     
 
 Great job so far! You have mastered the hardest part, and we are close to have our installer ready.
 
--   Making an installer using jpackage will cause jpackage to put every file that is inside the same folder as the JAR file into the installer. This unnecessarily bloats the installer, resulting in a much bigger file size as is actually needed. So please open your project folder on your desktop, create a new folder inside called output, and place your JAR in it.
+-   Making an installer using `jpackage` will cause `jpackage` to put *every file* that is inside the same folder as the `JAR` file into the installer. This unnecessarily bloats the installer, resulting in a much bigger file size as actually needed. So please `open` your project folder on your desktop, create a `new folder`, name it `output`, and put your `JAR` inside.
     
--   Now we are ready to create a Windows Installer, which installs our program as an EXE on a computer. As I said, it will let the user decide where they want to install it, and also ships everything needed for our Java program to run.  
-    Which means, the users doesn’t have Java to be installed, which is pretty cool, if you ask me.
+-   Now we are ready to create a Windows Installer, which installs our program as an `EXE` on a computer. As I said, it will let the user decide where they want to install it, and also ships everything needed for our Java program to run.  
+Which means, the users doesn’t have Java to be installed, which is pretty cool, if you ask me.
     
--   The commands we have to enter into CMD for jpackage to create an installer is pretty long, and you will have to edit it, so it fits your path/name. Because of this, I recommend you to copy it to a text file. This way you can also save it somewhere on your computer, and use it as needed.  
+-   The commands we have to enter into CMD for jpackage to create an installer is pretty long, and you will have to `edit` it, so it fits your path/name. Because of this, I recommend you to `copy` it to a text file. This way you can also save it somewhere on your computer, and use it as needed.  
       
     
--   Your CMD is still in the directory of your project, so let’s navigate to the output folder we just created, by typing cd output into the console, and hit enter.  
-    The displayed in CMD should look like C:\Users\YOUR_USERNAME\Desktop\Main\output.  
+-   Your CMD is still in the directory of your project, so let’s navigate to the output folder we just created, by typing `cd output` into the console, and hit `enter`.  
+The is how it should be displayed in your CMD `C:\Users\YOUR_USERNAME\Desktop\Main\output`
       
     
--   Paste the following command to your text file and put in your Windows username.  
-    In case your project is not located at your desktop, has a different name, or you just want to have your program a different name than Main: I will explain every part of the command below it, so you can edit it as needed.  
-      
-    
--   If you have edited everything, paste your command into CMD by CTRL + V or CTRL + INS for jpackage to start doing its job:  
-      
-    jpackage -t exe --name Main --description "This is my amazing Java program” --app-version 1.0 --input C:\Users\YOUR_USERNAME\Desktop\Main --dest C:\Users\YOUR_USERNAME\Desktop\Main\output --icon C:\Users\YOUR_USERNAME\Desktop\Main\NameOfYourProgramsIcon.ico --main-jar Main.jar --win-console --win-dir-chooser --win-shortcut
-    
+-   `Paste` the following command to your text file and `change` it to your Windows username.  
 
-Please note: The jpackage needs a couple of moments (depending on how fast your computer is) to create the installer.
+> **In case your project is not located at your desktop, has a different
+> name, or you just want to have your program a different name than
+> Main: I will explain every part of the command below it, so you can
+> edit it as needed.**
 
-What do all those commands?  
-> jpackage: Runs jpackage (obviously).  
-> -t exe: Tells jpackage what type of package to create, in our case an EXE file.  
-> --name: Specifies what name the application and installer should have.  
-> --description: Describe what your program is, take care to put it into “ “ - like a String variable.  
-> --app-version: The version of your app.  
-> --input: Path to the files to put into the installer, laying in your project’s folder. This means, every file that’s in this folder will be put into the EXE.  
-> --dest: Path where the output installer should be saved.  
-> --icon: Path of your icon that you want the program (not the installer!) to have.  
-Note: ICO max file size is 150 x 150 pixels.  
-> --main-jar: Name of your.  
-> --win-console: It specifies to create a console launcher for the program, in case it is a program that runs in the console.  
-> --win-dir-chooser: Allows the user to choose where to install the application.  
-> --win-shortcut: Puts a shortcut of your program to the user’s desktop.
+      
+-   If you have `edited` everything, `paste` your command into CMD by `CTRL + V` or `CTRL + INS` for jpackage to start doing its job:  
+      
+`jpackage -t exe --name Main --description "This is my amazing Java program” --app-version 1.0 --input C:\Users\YOUR_USERNAME\Desktop\Main --dest C:\Users\YOUR_USERNAME\Desktop\Main\output --icon C:\Users\YOUR_USERNAME\Desktop\Main\NameOfYourProgramsIcon.ico --main-jar Main.jar --win-console --win-dir-chooser --win-shortcut`
+    
+Please note: *jpackage needs a couple of moments (depending on how fast your computer is) to create the installer.*
 
-There are also options for JavaFX applications, just delete --win-console and put in --module-path, as well as --add-modules.  
-For further detail, please visit: [https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html  
-  
-](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html)
+**What are all these commands good for?**  
+
+`jpackage`: Runs jpackage (obviously).  
+`-t exe`: Tells `jpackage` what type of package to create, in our case an `EXE` file.  
+`--name`: Specifies what `name` the application and installer should have.  
+`--description`: Describe what your program is, take care about putting it into `“ “` - like a String variable.  
+`--app-version`: The version of your app.  
+`--input`: Path to the files to put into the installer, laying in your project’s folder. This means, every file that’s in this folder will be packed into the `EXE`.  
+`--dest`: Path where the output installer should be saved.  
+`--icon`: Path of your icon that you want the program (not the installer!) to have.  
+*Note: ICO max file size is 150 x 150 pixe*ls.  
+`--main-jar:` Name of your.  
+`--win-console`: It specifies to create a console launcher for the program, in case it is a program that runs in the console.  
+`--win-dir-chooser`: Allows the user to choose where to install the application.  
+`--win-shortcut`: Puts a shortcut of your program to the user’s desktop.
+
+There are also options for JavaFX applications, just replace -`-win-console`with `--module-path`, as well adding `--add-modules`.  
+For further detail, please visit: [https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html  ](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html)
 
 5.  New icon for the installer  
       

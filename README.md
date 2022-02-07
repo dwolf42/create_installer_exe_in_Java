@@ -156,6 +156,7 @@ The is how it should be displayed in your CMD `C:\Users\YOUR_USERNAME\Desktop\Ma
 
 **Please note:** *jpackage needs a couple of moments (depending on how fast your computer is) to create the installer.*
 
+<br/>
 **What are all these commands good for?**  
 
 `jpackage`: Runs jpackage (obviously).  
@@ -195,34 +196,35 @@ And right here comes Resource Hack into play.
 
 And there it is, your installer is ready and coming with an individual icon - congratulations! 🎉
 <br/>
-TROUBLE SHOOTING:
+# TROUBLE SHOOTING:
 
-JAR command not recognized in CMD:  
+**`JAR` command not recognized in CMD:**  
   
-1. This can be related to a missing installation of the JDK (Java Development Kit), please see prerequisites for the link. I highly recommend you to install it in the default directory (as the installer suggests), that way you make things easier in setting the Environment Variable aka. include JDK in the PATH.
+1. This can be related to a missing installation of the `JDK` (Java Development Kit), please see *prerequisites* for the link. I highly recommend you to install it in the default directory (as the installer suggests), that way you make things easier in setting the Environment Variable aka. include `JDK` into the `PATH`.
 
-2. PATH entry / Environment Variable is missing can also cause CMD not knowing the JAR command. To change them, open Windows start menu and type environ this should be enough to bring up Edit the system environment variables - run it.
+2. `PATH` entry / `Environment Variable` is missing can also cause CMD not knowing the `JAR` command. To change them, `open` Windows start menu and type `environ` this should be enough to bring up `Edit the system environment variables` - run it.
 
--   Go to the Advanced tab (top side) and click Environment Variables…
+-   Go to the `Advanced` tab (top side) and click `Environment Variables…`
     
--   In the lower part of the upcoming window, you find the System variables, look for the entry named Path (take care, there is another entry with a similar name), single click it and click Edit…
+-   In the lower part of the upcoming window, you find the `System variables`, look for the entry named `Path` (*take care, there is another entry with a similar name*), `highlight / single click` it and click `Edit…`
     
--   There should be a variable called C:\Program Files\Java or similar. Mine contained something with Oracle in it. Select it and click Browse…
+-   There should be a variable called `C:\Program Files\Java` or similar. Mine contained something with *Oracle* in it. `Select it` and click `Browse…`
     
--   Now, navigate to C:\Program Files\Java\ - select the Bin folder - hit 4 times OK, once  in each window.
+-   Now, navigate to `C:\Program Files\Java\` - select the `Bin` folder - hit 4 times `OK`, once  in each window.
     
--   In case your CMD is open, close and re-open it. You now can type jar into CMD, and if it displays something like Usage: jar [OPTION…] etc. you’re fine now.
+-   In case your CMD is open, `close` and `re-open` it. You now can type `jar` into CMD, and when it displays something like `Usage: jar [OPTION…]` etc. you’re fine now.
     
+<br/>
 
-Antivirus suspects the installer as malware:  
+**Antivirus suspects the installer / program as malware:**  
   
-Your program is self-written, so no antivirus program knows about it. Just let the AV scan the program, and it should be fine to run.  
+This is totally normal, as your program is self-written, so no antivirus program knows about it. Just let the AV scan the program, and it should be fine to run.  Sometimes white-listing the installer or program can also help to run it.
   
-While in theory you could send your program to some of the most common AV companies to verify it is safe, this would only apply for this one version. If you update your application to a newer version, it has to been done again.
+While in theory you could send your program to some of the most common AV companies to verify if that it is safe, this would only apply for this one version. The next time you update your application to a newer version, you will have to re-do it again.
 
-As far as I know, the best way to avoid AVs from going mad is to get a real certificate for Windows for it, but this will cost money.
+As far as I know, the most elementary way to avoid AVs from going mad about your program is to get a real certificate for Windows for it, but this will cost money.
 
-A good workaround is to put your installer into a folder and make a ZIP or RAR archive out of it. This way you can place a readmefirst.txt which the user - hopefully - opens and reads before running the program.  
+A good workaround is to put your installer into a folder and make a ZIP or RAR file out of it. This way you can place a `readmefirst.txt` which the user - hopefully - opens and reads before running the program.  
 But we all know, no one reads these files ;)  
   
 The best practice is to tell people about the AV will notice the installer, and after it scanned it, everything will be fine.

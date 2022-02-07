@@ -54,6 +54,9 @@ In case there is one of them missing, you can get both here:
 - [ ] JDK: [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
 - [ ] JRE: [https://java.com/en/download/](https://java.com/en/download/)  
       
+     
+      
+<br/>
 
 ## 1# Compiling the CLASS file:
    

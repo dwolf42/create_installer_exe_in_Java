@@ -153,7 +153,8 @@ The is how it should be displayed in your CMD `C:\Users\YOUR_USERNAME\Desktop\Ma
       
 `jpackage -t exe --name Main --description "This is my amazing Java program” --app-version 1.0 --input C:\Users\YOUR_USERNAME\Desktop\Main --dest C:\Users\YOUR_USERNAME\Desktop\Main\output --icon C:\Users\YOUR_USERNAME\Desktop\Main\NameOfYourProgramsIcon.ico --main-jar Main.jar --win-console --win-dir-chooser --win-shortcut`
     
-Please note: *jpackage needs a couple of moments (depending on how fast your computer is) to create the installer.*
+
+**Please note:** *jpackage needs a couple of moments (depending on how fast your computer is) to create the installer.*
 
 **What are all these commands good for?**  
 
@@ -174,24 +175,26 @@ Please note: *jpackage needs a couple of moments (depending on how fast your com
 There are also options for JavaFX applications, just replace -`-win-console`with `--module-path`, as well adding `--add-modules`.  
 For further detail, please visit: [https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html  ](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html)
 
-5.  New icon for the installer  
+<br/>
+
+## 5# New icon for the installer  
       
+   
+-   So, there is your `Main-1.0.exe` file inside your project’s `folder`. It usually has the same icon as your actual program. I personally don’t like it when the installer and the program share the same icon, as they can easier mistake with each otter **🦦**.  
+And right here comes Resource Hack into play.
     
+-   `Run` Resource Hack from its desktop or start menu shortcut.
+    
+-   Click `File` - `Open` … - navigate to your project’s folder and select your `Main-1.0.exe` - click `open`.
+    
+-   Click `Action` - `Add an Image or Other Binary Resource…`, in the upcoming window click Select `File…`, select the `ICO` file for your installer and click on `Add Resource`.
+    
+-   In the `main window` of Resource Hack, you see `two green floppy discs` (for the younger people aka. `save icons`), `click` the left one in order to `save` everything. Now you can `close` Resource Hack.
+    
+<br/>
 
--   So, there is your Main-1.0.exe file inside your project’s folder. It usually has the same icon as your actual program. I personally don’t like it when the installer and the program have the same icon, as it is easier to mistake one and the other.  
-    Here comes Resource Hack into play.
-    
--   Run Resource Hack from its desktop or start menu shortcut.
-    
--   Click File - Open … - navigate to your project’s folder and select your Main-1.0.exe - click open.
-    
--   Click Action - Add an Image or Other Binary Resource …, in the upcoming window click Select File …, select the ICO file for your installer and click on Add Resource.
-    
--   In the main window of Resource Hack, you see two green floppy discs (aka. save icons), click the left one in order to save everything. Now you can close Resource Hack.
-    
-
-And there it is, your installer is ready and coming with an individual icon.
-
+And there it is, your installer is ready and coming with an individual icon - congratulations! 🎉
+<br/>
 TROUBLE SHOOTING:
 
 JAR command not recognized in CMD:  

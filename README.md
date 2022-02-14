@@ -157,6 +157,7 @@ The is how it should be displayed in your CMD `C:\Users\YOUR_USERNAME\Desktop\Ma
 **Please note:** *jpackage needs a couple of moments (depending on how fast your computer is) to create the installer.*
 
 <br/>
+
 **What are all these commands good for?**  
 
 `jpackage`: Runs jpackage (obviously).  

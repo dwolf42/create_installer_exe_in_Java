@@ -64,7 +64,7 @@ In case there is one of them missing, you can get both here:
     
 -   The standard directory you are currently in is usually `C:\Users\YOUR_USERNAME` (on Win10 at least).
     
--   Navigate to your project’s folder, type `cd \Desktop\Main` into the CMD and hit `enter`.
+-   Navigate to your project’s folder, type `cd Desktop\Main` into the CMD and hit `enter`.
     
 -   In order to compile your project to bytecode, type `javac Main.java` and, again, hit `enter`.
     

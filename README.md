@@ -1,4 +1,4 @@
-# Creating an EXE file for Windows with jpackage
+# Creating an EXE file for Windows in 4 easy steps with jpackage
 
 As being a beginner in Java myself, I always wanted to have my console program to be standalone run-able on my and the Windows computers of my friends by a single double click. There are a lot of tools and even more, sometimes good, sometimes bad tutorials on how to use these tools. Some developers even charge theirs software, which is totally fine, but they had apparently not even thought about writing a guide about how to actually use this software.
 
@@ -23,6 +23,7 @@ Oh, and it's also relatively easy to use once you've seen how it works.
 Now without further ado, let’s jump right into the tutorial!  
   
 <br/>
+
 
 ## **Prerequisites:**
 
@@ -55,8 +56,7 @@ In case there is one of them missing, you can get both here:
 
 - [ ] JDK: [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
 - [ ] JRE: [https://java.com/en/download/](https://java.com/en/download/)  
-      
-     
+         
       
 <br/>
 
@@ -75,7 +75,7 @@ In case there is one of them missing, you can get both here:
     
     <br/>
 
-## 2# Creating a JAR file  
+## 2# Creating a JAR file, which already contains the main class
       
     
 
@@ -92,41 +92,8 @@ In case there is one of them missing, you can get both here:
     
 <br/>
 
-## 3# Specify the main class
-    
 
-Ok, this part is a little tricky, so make sure you read it carefully, before following the steps.
-
--   Go to your project’s folder, `right-click` the `Main.jar` - click `7-Zip` - `open`
-    
--   `Open` the META–INF folder  - `open` MANIFEST.MF  
-      
-    >**The file contains text, similar to this:  
-    Manifest-Version: 1.0  
-    Created-By: 17.0.1 (Oracle Corporation)** 
-    
-    <br/>
-⚠️**IMPORTANT⚠️:** 
-*The manifest must end with a new line or carriage return after the text. The last line will not be parsed properly if it does not end with a new line or carriage return.*
-
-Add as the last line `Main-Class: Main`  
-After this line there has to be a new line or carriage return.  
-  
-Manifest-Version: 1.0  
-Created-By: 17.0.1 (Oracle Corporation)  
-Main-Class: Main
-❗here-has-to-be-an-empty-new-line-so-just-hit-`enter`❗   
-   
-   
-⚠️**IMPORTANT⚠️:** 
-*The manifest must end with a new line or carriage return after the text. The last line will not be parsed properly if it does not end with a new line or carriage return.*
-<br/>
--   OK then, now hit `File` - `Save` and `close` the document. 7-Zip will ask you to update the archive, hit `OK` once again and `close` the 7-Zip window.  
-      
-    
-<br/>
-
-## 4# Let’s create the installer
+## 3# Let’s create the installer
     
 
 Great job so far! You have mastered the hardest part, and we are close to have our installer ready.
@@ -181,7 +148,7 @@ For further detail, please visit: [https://docs.oracle.com/en/java/javase/14/doc
 
 <br/>
 
-## 5# New icon for the installer  
+## 4# New icon for the installer  
       
    
 -   So, there is your `Main-1.0.exe` file inside your project’s `folder`. It usually has the same icon as your actual program. I personally don’t like it when the installer and the program share the same icon, as they can easier mistake with each otter **🦦**.  
@@ -199,6 +166,8 @@ And right here comes Resource Hack into play.
 
 And there it is, your installer is ready and coming with an individual icon - congratulations! 🎉
 <br/>
+
+
 # TROUBLE SHOOTING:
 
 **`JAR` command not recognized in CMD:**  

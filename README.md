@@ -42,7 +42,7 @@ What to place in that folder?
     
 **Install:** 
 - [ ] Wix Toolset [https://wixtoolset.org/releases/](https://wixtoolset.org/releases/) - jpackage needs it to be able to create your Windows Installer.
-- [ ] Wix also requires an installation of the Microsoft .NET Framework 3.5 Service Pack 1 [https://www.microsoft.com/en-US/download/details.aspx?id=22](Microsoft .NET Framework 3.5 Service Pack 1)
+- [ ] Wix also requires an installation of the Microsoft .NET Framework 3.5 Service Pack 1 https://www.microsoft.com/en-US/download/details.aspx?id=22
     
 - [ ] 7-Zip [https://7-zip.org/](https://7-zip.org/) - we need this to specify the main class inside the JAR file we are going to create.
     

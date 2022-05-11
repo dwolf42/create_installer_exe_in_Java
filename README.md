@@ -166,7 +166,7 @@ And right here comes Resource Hack into play.
 
 And there it is, your installer is ready and coming with an individual icon - congratulations! 🎉
 <br/>
-
+<br/>
 
 # TROUBLE SHOOTING:
 

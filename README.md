@@ -84,7 +84,8 @@ In case there is one of them missing, you can get both here:
     >**What this command does:**  
     *`jar` tells CMD to use the jar program coming with JDK.  
     `c` option indicates that you want to create a `JAR` file.  
-    `e` sets an entrypoint as the application entry point for stand-alone applications bundled into executable jar file, without editing or creating the manifest file.    `f` option indicates that you want the output to be a file.  
+    `e` sets an entrypoint as the application entry point for stand-alone applications bundled into executable jar file, without editing or creating the manifest file.<br/>
+    `f` option indicates that you want the output to be a file.  
     `Main.jar` is the name that your `JAR` will have after creation. You can name it anything, as long as it ends with `.jar` (basically you could even use another ending than `jar`, but that’s no good practice).  
     `Main.class` specifies the file you want to put into your JAR.  
     For more info about these and other commands, have a look at:* [https://docs.oracle.com/javase/tutorial/deployment/jar/build.html](https://docs.oracle.com/javase/tutorial/deployment/jar/build.html)  
